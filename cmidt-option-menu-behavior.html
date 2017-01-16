@@ -101,6 +101,10 @@ var OptionMenuBehaviorImpl = {
         '_onOverflowItemsChange(_overflowItems.*)'
     ],
 
+    get _isVisible() {
+        return Boolean(this.offsetWidth || this.offsetHeight);
+    },
+
     _onOrientaionPropertyChanged: function(newOrientaion, oldOrientation) {
         var validOrientation = ['horizontal','vertical'];
         if(validOrientation.indexOf(newOrientaion) === -1) {
@@ -155,7 +159,7 @@ var OptionMenuBehaviorImpl = {
 
     _onIronResize: function(e) {
         // process if menus content is populated
-        if (this.children.length > 0) {
+        if (this._isVisible && this.children.length > 0) {
             var roomSize = this.orientation == 'horizontal' ? this.getBoundingClientRect().width : this.getBoundingClientRect().height;
             var itemSize = this._itemSize;
             var requiredSize = this._calculateRequiredSize(itemSize);
