@@ -22,7 +22,7 @@ Polymer Option Menu like Android option menu. Option Menu automatically put the 
 </cmidt-option-menu>
 ```
 
-For more information visit https://cmidt-veasna.github.io/polymer/polymer/components/cmidt-optionmenu
+For more information visit https://cmidt-veasna.github.io/polymer/components/cmidt-optionmenu
 
 # Running Tests
 
